@@ -1,12 +1,12 @@
 // src/App.js
 import React from 'react';
 import './App.css';
-import GenderBiasDetector from './GenderBiasDetector';
+import BiasDetector from './BiasDetector';
 
 function App() {
   return (
     <div className="App">
-      <GenderBiasDetector />
+      <BiasDetector />
     </div>
   );
 }
