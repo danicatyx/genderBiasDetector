@@ -3,17 +3,15 @@ import React, { useState } from 'react';
 import TextInput from './TextInput';
 
 const BiasDetector = () => {
-    const handleSubmit = (result) => {
+    
+  const handleSubmit = (result) => {
         // Handle form data here, e.g., log it or send it to an API
         console.log(result);
+        
+        
         // Example: Send formData to backend API using fetch or axios
         // fetch('/submit-form', { method: 'POST', body: JSON.stringify(formData) });
     };
-
-    const history = () => {
-
-      console.log(history);
-    }
 
   // const [text, setText] = useState('');
   // const [result, setResult] = useState(null);
@@ -76,7 +74,7 @@ const BiasDetector = () => {
             </tr>
           </thead>
           <tbody>
-            {history.map((entry, index) => (
+            {handleSubmit.history.map((entry, index) => (
               <tr key={index}>
                 <td>{entry.text}</td>
                 <td>{JSON.stringify(entry.result.general_bias)}</td>

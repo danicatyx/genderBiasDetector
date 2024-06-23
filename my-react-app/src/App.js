@@ -10,7 +10,7 @@ function App() {
       <div class="container">
         <div class="box-60">
           <TextInput />
-          {/* <BiasDetector /> */}
+          <BiasDetector /> 
         </div>
         <div class="box-40">
           <h2>Performance Analysis</h2>
