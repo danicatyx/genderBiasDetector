@@ -6,7 +6,7 @@
 The ReVision Project presents an AI copilot tool for STEM textbook authors, capable of detecting and mitigating biases in textbooks to create inclusive educational content. Current initiatives create supplementary resources which are of extra cost and time. However, our solution streamlines textbook development, while also promoting classroom equity and fostering engagement.
 Incorporating supply chain diversity will have a significant impact in the following ways. First, it allows for enhanced Innovation as these individuals bring unique perspectives and innovative solutions that can enrich the development and functionality of our AI copilot tool. Secondly, we achieve strengthened community support. By supporting and empowering diverse suppliers, we contribute to building stronger and more resilient communities, which aligns with our mission of promoting diversity and inclusion in STEM education. 
 
-# nspiration
+# Inspiration
 Incorporating supply chain diversity will have a significant impact in the following ways. First, it allows for enhanced Innovation as these individuals bring unique perspectives and innovative solutions that can enrich the development and functionality of our AI copilot tool. Secondly, we achieve strengthened community support. By supporting and empowering diverse suppliers, we contribute to building stronger and more resilient communities, which aligns with our mission of promoting diversity and inclusion in STEM education and the future of work.
 
 # Problem we want to solve
