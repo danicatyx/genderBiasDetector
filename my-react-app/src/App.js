@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="box-60">
-          <h3>The ReVision Project</h3>
+          <h2>The ReVision Project</h2>
           <hr className="horizontal-line" />
           <BiasDetector onResult={handleResult} />
         </div>
