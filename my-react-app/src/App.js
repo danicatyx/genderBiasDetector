@@ -18,10 +18,6 @@ function App() {
     return score ? (score * 100).toFixed(2) : 'N/A';
   };
 
-  const calculateBiasPercentage = (score) => {
-    return score ? (score * 100).toFixed(2) : 0;
-  };
-
   return (
     <div className="App">
       <div className="container">
@@ -46,35 +42,35 @@ function App() {
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#0E90EF"/>
-                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(generalBiasScore)}%`} height="7" rx="3.5" fill="#0E90EF" />
+                  <rect x="0.5" y="0.5" width={`${formatScore(generalBiasScore)}%`} height="7" rx="3.5" fill="#0E90EF" />
                 </svg>
               </div>
-              <p>General Bias</p>
               {generalBiasScore !== null && (
-                <p>Score: {formatScore(generalBiasScore)}%</p>
+                <div className="score">{formatScore(generalBiasScore)}%</div>
               )}
+              <p>General Bias</p>
             </div>
             <div className="card">
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#AE62BB"/>
-                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(racialBiasScore)}%`} height="7" rx="3.5" fill="#AE62BB" />
+                  <rect x="0.5" y="0.5" width="0" height="7" rx="3.5" fill="#AE62BB" />
                 </svg>
               </div>
-              <p>Gender Bias</p>
               {/* Add gender bias score here if available */}
+              <p>Gender Bias</p>
             </div>
             <div className="card">
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" fill="white" stroke="#ED5958"/>
-                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(racialBiasScore)}%`} height="7" rx="3.5" fill="#ED5958" />
+                  <rect x="0.5" y="0.5" width={`${formatScore(racialBiasScore)}%`} height="7" rx="3.5" fill="#ED5958" />
                 </svg>
               </div>
-              <p>Racial Bias</p>
               {racialBiasScore !== null && (
-                <p>Score: {formatScore(racialBiasScore)}%</p>
+                <div className="score">{formatScore(racialBiasScore)}%</div>
               )}
+              <p>Racial Bias</p>
             </div>
             <div className="card">
               <div className="pill">
@@ -82,8 +78,8 @@ function App() {
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#4E9D77"/>
                 </svg>
               </div>
-              <p>Disability Bias</p>
               {/* Add disability bias score here if available */}
+              <p>Disability Bias</p>
             </div>
           </div>
           <hr className="horizontal-line" />

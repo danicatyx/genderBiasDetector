@@ -21,6 +21,7 @@
 
 .card {
   display: flex;
+  flex-direction: column;
   width: 130px;
   height: 131px;
   border-radius: 10px;
@@ -29,16 +30,31 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 22px;
+  gap: 10px;
   flex-shrink: 0;
-  flex-direction: column;
   margin-bottom: 10px;
+  padding-top: 10px; /* Added padding to ensure content stays inside the card */
 }
 
 .pill {
   width: 62px;
   height: 8px;
   flex-shrink: 0;
+  position: relative; /* Ensure the position context for the score */
+  margin-bottom: 5px; /* Added margin to ensure space between the pill and the score */
+}
+
+.pill svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.score {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .emotions-card {
@@ -63,135 +79,5 @@
 }
 
 .box-40 {
-  flex: 0 0 45%;
-  background-color: #ffffff;
-  border-left: 1px solid #D3D3D3;
-  padding: 10px;
+  flex: 0 
 }
-
-h1, h2, h3, h4, h5, h6, p {
-  color: #000;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  margin-left: 20px;
-}
-
-.horizontal-line {
-  border: none;
-  border-top: 1px solid #D3D3D3;
-}
-
-.outer-circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #3498db;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-left: 20px;
-}
-
-.inner-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-  justify-items: right;
-  position: absolute;
-  padding: 10px;
-}
-
-form {
-  margin-bottom: 20px;
-}
-
-textarea {
-  width: 95%;
-  height: calc(100% - 40px);
-  padding: 10px;
-  border: 1px solid #f1eeee;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-button:hover:enabled {
-  background-color: #0056b3;
-}
-
-.analysis-result {
-  background-color: #e9ecef;
-  padding: 10px;
-  border-radius: 4px;
-  margin-top: 10px;
-  white-space: pre-wrap;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-th {
-  background-color: #f2f2f2;
-  text-align: left;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #f1f1f1;
-}
-
-.progress-bar {
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.progress-bar > div {
-  height: 100%;
-  border-radius: 5px;
-}
-
-.pill svg {
-  position: relative;
-}
-
-.pill svg rect:nth-child(2) {
-  fill-opacity: 0.7;
-}
-
