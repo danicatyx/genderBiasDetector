@@ -1,7 +1,19 @@
 .container {
   display: flex;
-  width: 1440px;
-  height: 1063px;
+  width: 100%; /* Make sure the container takes up the full width of the viewport */
+  height: 100vh; /* Adjust the height as necessary */
+}
+
+.box-60 {
+  flex: 0 0 60%; /* 60% width of the container */
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.box-40 {
+  flex: 0 0 40%; /* 40% width of the container */
+  background-color: #ffffff;
+  padding: 10px;
 }
 
 .grid-container {
@@ -12,7 +24,7 @@
 
 .cards-container {
   display: flex;
-  width: 565px;
+  width: 100%;
   padding: 0px 9px;
   justify-content: center;
   align-items: flex-start;
@@ -33,15 +45,15 @@
   gap: 10px;
   flex-shrink: 0;
   margin-bottom: 10px;
-  padding-top: 10px; /* Added padding to ensure content stays inside the card */
+  padding-top: 10px;
 }
 
 .pill {
   width: 62px;
   height: 8px;
   flex-shrink: 0;
-  position: relative; /* Ensure the position context for the score */
-  margin-bottom: 5px; /* Added margin to ensure space between the pill and the score */
+  position: relative;
+  margin-bottom: 5px;
 }
 
 .pill svg {
@@ -70,14 +82,4 @@
   border-radius: 10px;
   border: 1px solid #D3D3D3;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.30);
-}
-
-.box-60 {
-  flex: 0 0 55%;
-  background-color: #ffffff;
-  padding: 10px;
-}
-
-.box-40 {
-  flex: 0 
 }
