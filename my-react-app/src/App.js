@@ -8,13 +8,21 @@ function App() {
   const [genderBiasScore, setGenderBiasScore] = useState(null);
 
   const handleResult = (result) => {
-    const politicalBias = result.political_bias && result.political_bias.length > 0 ? result.political_bias[0].score : null;
-    const racialBias = result.racial_bias && result.racial_bias.length > 0 ? result.racial_bias[0].score : null;
-    const genderBias = result.gender_bias && result.gender_bias.length > 0 ? result.gender_bias[0].score : null;
+    const politicalBias = result.political_bias && result.political_bias.length > 0 ? formatBias(result.political_bias[0]) : null;
+    const racialBias = result.racial_bias && result.racial_bias.length > 0 ? formatBias(result.racial_bias[0]) : null;
+    const genderBias = result.gender_bias && result.gender_bias.length > 0 ? formatBias(result.gender_bias[0]) : null;
 
     setPoliticalBiasScore(politicalBias);
     setRacialBiasScore(racialBias);
     setGenderBiasScore(genderBias);
+  };
+
+  const formatBias = (bias) => {
+    if (bias.label === 'Non-biased') {
+      return 1 - bias.score;
+    } else {
+      return bias.score;
+    }
   };
 
   const formatScore = (score) => {
