@@ -3,16 +3,16 @@ import './App.css';
 import BiasDetector from './Components/BiasDetector';
 
 function App() {
-  const [generalBiasScore, setGeneralBiasScore] = useState(null);
+  const [politicalBiasScore, setPoliticalBiasScore] = useState(null);
   const [racialBiasScore, setRacialBiasScore] = useState(null);
   const [genderBiasScore, setGenderBiasScore] = useState(null);
 
   const handleResult = (result) => {
-    const generalBias = result.general_bias && result.general_bias.length > 0 ? result.general_bias[0].score : null;
+    const politicalBias = result.political_bias && result.political_bias.length > 0 ? result.political_bias[0].score : null;
     const racialBias = result.racial_bias && result.racial_bias.length > 0 ? result.racial_bias[0].score : null;
     const genderBias = result.gender_bias && result.gender_bias.length > 0 ? result.gender_bias[0].score : null;
 
-    setGeneralBiasScore(generalBias);
+    setPoliticalBiasScore(politicalBias);
     setRacialBiasScore(racialBias);
     setGenderBiasScore(genderBias);
   };
@@ -53,13 +53,13 @@ function App() {
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#0E90EF" />
-                  <rect x="0.5" y="0.5" width={`${formatScore(generalBiasScore)}%`} height="7" rx="3.5" fill="#0E90EF" />
+                  <rect x="0.5" y="0.5" width={`${formatScore(politicalBiasScore)}%`} height="7" rx="3.5" fill="#0E90EF" />
                 </svg>
               </div>
-              {generalBiasScore !== null && (
-                <div className="score">{formatScore(generalBiasScore)}%</div>
+              {politicalBiasScore !== null && (
+                <div className="score">{formatScore(politicalBiasScore)}%</div>
               )}
-              <p>General Bias</p>
+              <p>Political Bias</p>
             </div>
             <div className="card">
               <div className="pill">

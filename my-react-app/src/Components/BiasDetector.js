@@ -29,7 +29,7 @@ const BiasDetector = ({ onResult }) => {
             <thead>
               <tr>
                 <th>Text</th>
-                <th>General Bias Result</th>
+                <th>Political Bias Result</th>
                 <th>Racial Bias Result</th>
               </tr>
             </thead>
@@ -37,7 +37,7 @@ const BiasDetector = ({ onResult }) => {
               {history.map((entry, index) => (
                 <tr key={index}>
                   <td>{entry.text}</td>
-                  <td>{JSON.stringify(entry.result.general_bias)}</td>
+                  <td>{JSON.stringify(entry.result.political_bias)}</td>
                   <td>{JSON.stringify(entry.result.racial_bias)}</td>
                 </tr>
               ))}

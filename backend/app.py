@@ -7,10 +7,10 @@ from transformers import AutoTokenizer, TFAutoModelForSequenceClassification, pi
 app = Flask(__name__)
 CORS(app)
 
-# Load general bias model
-general_tokenizer = AutoTokenizer.from_pretrained("d4data/bias-detection-model")
-general_model = TFAutoModelForSequenceClassification.from_pretrained("d4data/bias-detection-model")
-general_classifier = pipeline('text-classification', model=general_model, tokenizer=general_tokenizer)
+# Load political bias model
+political_tokenizer = AutoTokenizer.from_pretrained("d4data/bias-detection-model")
+political_model = TFAutoModelForSequenceClassification.from_pretrained("d4data/bias-detection-model")
+political_classifier = pipeline('text-classification', model=political_model, tokenizer=political_tokenizer)
 
 # Load racial bias model
 racial_tokenizer = AutoTokenizer.from_pretrained("unitary/toxic-bert")
@@ -20,7 +20,7 @@ racial_classifier = pipeline('text-classification', model=racial_model, tokenize
 #load gender bias model
 gender_tokenizer = AutoTokenizer.from_pretrained("d4data/bias-detection-model")
 gender_model = TFAutoModelForSequenceClassification.from_pretrained("d4data/bias-detection-model")
-gender_classifier = pipeline('text-classification', model=general_model, tokenizer=general_tokenizer)
+gender_classifier = pipeline('text-classification', model=political_model, tokenizer=political_tokenizer)
 
 @app.route('/')
 def home():
@@ -31,12 +31,12 @@ def home():
 def detect_bias():
     data = request.json
     text = data['text']
-    general_result = general_classifier(text)
+    political_result = political_classifier(text)
     racial_result = racial_classifier(text)
     gender_result = gender_classifier(text)
 
     result = {
-        'general_bias': general_result,
+        'political_bias': political_result,
         'racial_bias': racial_result,
         'gender_bias': gender_result,
     }
