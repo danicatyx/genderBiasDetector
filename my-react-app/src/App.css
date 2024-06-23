@@ -33,7 +33,7 @@ textarea {
 
 .container {
   display: flex;
-  width: 100vw; /* Make sure the container takes up the full width of the viewport */
+  width: 60vw; /* Make sure the container takes up the full width of the viewport */
   height: 100vh; /* Adjust the height as necessary */
   padding: 10px;
 }

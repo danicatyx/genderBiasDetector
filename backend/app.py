@@ -17,19 +17,28 @@ racial_tokenizer = AutoTokenizer.from_pretrained("unitary/toxic-bert")
 racial_model = TFAutoModelForSequenceClassification.from_pretrained("unitary/toxic-bert")
 racial_classifier = pipeline('text-classification', model=racial_model, tokenizer=racial_tokenizer)
 
+#load gender bias model
+gender_tokenizer = AutoTokenizer.from_pretrained("d4data/bias-detection-model")
+gender_model = TFAutoModelForSequenceClassification.from_pretrained("d4data/bias-detection-model")
+gender_classifier = pipeline('text-classification', model=general_model, tokenizer=general_tokenizer)
+
 @app.route('/')
 def home():
     return "This is the backend server for bias detection."
 
+@app.route('/detect_bias', methods=['POST'])
 @app.route('/detect_bias', methods=['POST'])
 def detect_bias():
     data = request.json
     text = data['text']
     general_result = general_classifier(text)
     racial_result = racial_classifier(text)
+    gender_result = gender_classifier(text)
+
     result = {
         'general_bias': general_result,
         'racial_bias': racial_result,
+        'gender_bias': gender_result,
     }
     return jsonify(result)
 
