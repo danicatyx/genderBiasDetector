@@ -95,6 +95,18 @@ function App() {
             </div>
           </div>
           <hr className="horizontal-line" />
+          <h4>Interpreting Bias Scores</h4>
+          <p>
+            The bias scores indicate the likelihood of bias present in the analyzed text. 
+            A higher score means a higher likelihood of bias.
+          </p>
+          <ul>
+            <li><strong>Political Bias:</strong> Indicates the presence of political bias. Scores closer to 100% indicate a higher likelihood of political bias.</li>
+            <li><strong>Racial Bias:</strong> Indicates the presence of racial bias. Scores closer to 100% indicate a higher likelihood of racial bias.</li>
+            <li><strong>Gender Bias:</strong> Indicates the presence of gender bias. Scores closer to 100% indicate a higher likelihood of gender bias.</li>
+            <li><strong>Non-biased Labels:</strong> For non-biased labels, the score is inverted (1 - score) to show the percentage of non-bias.</li>
+          </ul>
+          <hr className="horizontal-line" />
           <h4>Emotional Metrics</h4>
           <div className="cards-container">
             <div className="emotions-card">
