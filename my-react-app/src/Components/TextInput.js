@@ -26,17 +26,16 @@ const TextInput = ({ onSubmit }) => {
 
   return (
     <div>
-      <h3>The ReVision Project</h3>
-      <hr className="horizontal-line" />
       <form onSubmit={handleSubmit}>
         <textarea
           value={text}
           onChange={handleChange}
           placeholder="Enter text here"
+          cols="50" 
           rows="10"
         />
         <br />
-        <button type="submit" disabled={loading}>
+        <button className="button" type="submit" disabled={loading}>
           {loading ? 'Detecting...' : 'Detect Bias'}
         </button>
       </form>
