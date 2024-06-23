@@ -14,6 +14,14 @@ function App() {
     setRacialBiasScore(racialBias);
   };
 
+  const formatScore = (score) => {
+    return score ? (score * 100).toFixed(2) : 'N/A';
+  };
+
+  const calculateBiasPercentage = (score) => {
+    return score ? (score * 100).toFixed(2) : 0;
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -29,7 +37,7 @@ function App() {
               <path d="M39 38.9897L75.1304 27.2503C81.6139 47.2045 70.6937 68.6366 50.7395 75.1201C30.7852 81.6037 9.35314 70.6835 2.86961 50.7292C-3.61393 30.775 7.30626 9.34288 27.2605 2.85935C31.0519 1.62746 35.0135 1 39 1V38.9897Z" fill="#F4F4F4" stroke="white"/>
               <circle cx="39.5" cy="38.5" r="27.5" fill="white"/>
             </svg>
-            <div><p>Your scores goes here</p></div>
+            <div><p>Your scores go here</p></div>
           </div>
           <hr className="horizontal-line" />
           <h4>Bias Metrics</h4>
@@ -41,7 +49,12 @@ function App() {
                 </svg>
               </div>
               <p>General Bias</p>
-              {generalBiasScore !== null && <p>Score: {generalBiasScore.toFixed(2)}</p>}
+              {generalBiasScore !== null && (
+                <>
+                  <p>Score: {formatScore(generalBiasScore)}%</p>
+                  <div className="progress-bar" style={{ width: `${calculateBiasPercentage(generalBiasScore)}%`, backgroundColor: '#0E90EF' }} />
+                </>
+              )}
             </div>
             <div className="card">
               <div className="pill">
@@ -59,7 +72,12 @@ function App() {
                 </svg>
               </div>
               <p>Racial Bias</p>
-              {racialBiasScore !== null && <p>Score: {racialBiasScore.toFixed(2)}</p>}
+              {racialBiasScore !== null && (
+                <>
+                  <p>Score: {formatScore(racialBiasScore)}%</p>
+                  <div className="progress-bar" style={{ width: `${calculateBiasPercentage(racialBiasScore)}%`, backgroundColor: '#ED5958' }} />
+                </>
+              )}
             </div>
             <div className="card">
               <div className="pill">
