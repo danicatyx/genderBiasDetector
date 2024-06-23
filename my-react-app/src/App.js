@@ -46,20 +46,19 @@ function App() {
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#0E90EF"/>
+                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(generalBiasScore)}%`} height="7" rx="3.5" fill="#0E90EF" />
                 </svg>
               </div>
               <p>General Bias</p>
               {generalBiasScore !== null && (
-                <>
-                  <p>Score: {formatScore(generalBiasScore)}%</p>
-                  <div className="progress-bar" style={{ width: `${calculateBiasPercentage(generalBiasScore)}%`, backgroundColor: '#0E90EF' }} />
-                </>
+                <p>Score: {formatScore(generalBiasScore)}%</p>
               )}
             </div>
             <div className="card">
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" stroke="#AE62BB"/>
+                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(racialBiasScore)}%`} height="7" rx="3.5" fill="#AE62BB" />
                 </svg>
               </div>
               <p>Gender Bias</p>
@@ -69,14 +68,12 @@ function App() {
               <div className="pill">
                 <svg xmlns="http://www.w3.org/2000/svg" width="62" height="8" viewBox="0 0 62 8" fill="none">
                   <rect x="0.5" y="0.5" width="61" height="7" rx="3.5" fill="white" stroke="#ED5958"/>
+                  <rect x="0.5" y="0.5" width={`${calculateBiasPercentage(racialBiasScore)}%`} height="7" rx="3.5" fill="#ED5958" />
                 </svg>
               </div>
               <p>Racial Bias</p>
               {racialBiasScore !== null && (
-                <>
-                  <p>Score: {formatScore(racialBiasScore)}%</p>
-                  <div className="progress-bar" style={{ width: `${calculateBiasPercentage(racialBiasScore)}%`, backgroundColor: '#ED5958' }} />
-                </>
+                <p>Score: {formatScore(racialBiasScore)}%</p>
               )}
             </div>
             <div className="card">
