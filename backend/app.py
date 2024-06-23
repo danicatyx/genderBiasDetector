@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification, pipeline
+from genbit.genbit_metrics import GenBitMetrics
 
 app = Flask(__name__)
 CORS(app)
@@ -28,7 +29,7 @@ def detect_bias():
     racial_result = racial_classifier(text)
     result = {
         'general_bias': general_result,
-        'racial_bias': racial_result
+        'racial_bias': racial_result,
     }
     return jsonify(result)
 

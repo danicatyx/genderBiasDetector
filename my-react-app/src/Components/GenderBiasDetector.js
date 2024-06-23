@@ -44,6 +44,7 @@ const GenderBiasDetector = () => {
         <button type="submit" disabled={loading}>
           {loading ? 'Detecting...' : 'Detect Gender Bias'}
         </button>
+        
       </form>
       {result && (
         <div>
